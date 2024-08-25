@@ -76,15 +76,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminPanel\AdminPanel.cs" />
+    <Compile Include="Commands\BanTag.cs" />
+    <Compile Include="Commands\Counts.cs" />
+    <Compile Include="ConsoleCommands.cs" />
     <Compile Include="RoblettinCommandsSubModule.cs" />
     <Compile Include="ChatHandler.cs" />
     <Compile Include="CommandManager.cs" />
     <Compile Include="BanManager.cs" />
-    <Compile Include="Commands\Ban.cs" />
-    <Compile Include="Commands\Command.cs" />
-    <Compile Include="Commands\Kick.cs" />
-    <Compile Include="Commands\Kill.cs" />
+    <Compile Include="Commands\BanClan.cs" />
+    <Compile Include="Commands\RoblettinCommand.cs" />
+    <Compile Include="Commands\KickClan.cs" />
+    <Compile Include="Commands\KillClan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoblettinConfigs.cs" />
+    <Compile Include="TagManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

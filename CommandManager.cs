@@ -12,7 +12,7 @@ namespace RoblettinCommands
     {
         public static CommandManager Instance {get;set;}
 
-        public Dictionary<string, Command> Commands;
+        public Dictionary<string, RoblettinCommand> Commands;
 
 
         public CommandManager() {
@@ -42,11 +42,11 @@ namespace RoblettinCommands
         }
 
         private void Initialize() {
-            this.Commands = new Dictionary<string, Command>();
+            this.Commands = new Dictionary<string, RoblettinCommand>();
             foreach (Type mytype in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
-                 .Where(mytype => mytype.GetInterfaces().Contains(typeof(Command))))
+                 .Where(mytype => mytype.GetInterfaces().Contains(typeof(RoblettinCommand))))
             {
-                var command = (Command) Activator.CreateInstance(mytype);
+                var command = (RoblettinCommand) Activator.CreateInstance(mytype);
                 if (!Commands.ContainsKey(command.Command())) {
                     Debug.Print("** Chat Command " + command.Command() + " have been initiated !", 0, Debug.DebugColor.Green);
                     Commands.Add(command.Command(), command);
